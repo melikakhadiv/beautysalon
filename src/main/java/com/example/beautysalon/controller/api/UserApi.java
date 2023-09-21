@@ -13,6 +13,7 @@ public class UserApi {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/{id}")
     public Response findById(@PathParam("id") long id) {
+        System.out.println("get");
         try {
             System.out.println(id);
             User user = UserService.getService().findById(id);
@@ -20,6 +21,7 @@ public class UserApi {
         }catch (NotFoundException e){
             return Response.noContent().build();
         }catch (Exception e){
+            e.printStackTrace();
             return Response
                     .status(700)
                     .entity("error")

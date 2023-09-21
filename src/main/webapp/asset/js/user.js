@@ -24,17 +24,26 @@ async function showModal(id) {
     // roleTxt.value = data.role;
     // statusTxt.value = data.status;
 }
-function resetData(){
-    document.getElementById("userEdit").value().reset();
-    document.getElementById("idTxt").value().reset();
-    document.getElementById("usernameTxt").value().reset();
-    document.getElementById("passwordTxt").value().reset();
-    document.getElementById("nameTxt").value().reset();
-    document.getElementById("familyTxt").value().reset();
-    document.getElementById("roleTxt").value().reset();
-    document.getElementById("phoneNumberTxt").value().reset();
-    document.getElementById("statusTxt").value().reset();
+
+function resetData() {
+    let idTxt = document.getElementById("idTxt");
+    let usernameTxt = document.getElementById("usernameTxt");
+    let passwordTxt = document.getElementById("passwordTxt");
+    let nameTxt = document.getElementById("nameTxt");
+    let familyTxt = document.getElementById("familyTxt");
+    let phoneNumberTxt = document.getElementById("phoneNumberTxt");
+    let roleTxt = document.getElementById("roleTxt");
+    let statusTxt = document.getElementById("statusTxt");
+    idTxt.value = "";
+        usernameTxt.value = "";
+        passwordTxt.value = "";
+        nameTxt.value = "";
+        familyTxt.value = "";
+        phoneNumberTxt.value = "";
+        roleTxt.value = "";
+        statusTxt.value = "";
 }
+
 // async function edit(id) {
 //
 //     const response = await fetch("user.do?edit=" + id , {method: "Get"}) ;
@@ -43,7 +52,6 @@ function resetData(){
 //
 //     modal.style.display = "block";
 // }
-
 
 
 // async function edit() {
@@ -72,14 +80,14 @@ function resetData(){
 //         });
 // }
 
-async function remove(id) {
-    const response = await fetch("/user.do?" + new URLSearchParams({
-        id: id
-    }),
-        {
-            method: "DELETE"
-        })
+        async function remove(id) {
+            const response = await fetch("/user.do?" + new URLSearchParams({
+                id: id
+            }),
+                {
+                    method: "DELETE"
+                })
 
-    window.location.replace("/user.do");
-}
+            window.location.replace("/user.do");
+        }
 

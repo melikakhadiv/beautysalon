@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="UTF-8">
 </head>
-<body dir="rtl".>
+<body dir="rtl">
 <div>
     <jsp:include page="/head.jsp"></jsp:include>
 </div>
