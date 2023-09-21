@@ -2,7 +2,7 @@ async function showModal(id) {
     $("#modalSubscriptionForm").modal('toggle');
     console.log(id);
     let response = await fetch("/user.do?" + new URLSearchParams({edit: id}), {method: "Get"});
-
+    console.log(response);
     // const response = await fetch("/api/user?" + new URLSearchParams({id: id})
     //     , {method: "Get"});
     // const data = await response.json();
@@ -35,13 +35,13 @@ function resetData() {
     let roleTxt = document.getElementById("roleTxt");
     let statusTxt = document.getElementById("statusTxt");
     idTxt.value = "";
-        usernameTxt.value = "";
-        passwordTxt.value = "";
-        nameTxt.value = "";
-        familyTxt.value = "";
-        phoneNumberTxt.value = "";
-        roleTxt.value = "";
-        statusTxt.value = "";
+    usernameTxt.value = "";
+    passwordTxt.value = "";
+    nameTxt.value = "";
+    familyTxt.value = "";
+    phoneNumberTxt.value = "";
+    roleTxt.value = "";
+    statusTxt.value = "";
 }
 
 // async function edit(id) {
@@ -80,14 +80,14 @@ function resetData() {
 //         });
 // }
 
-        async function remove(id) {
-            const response = await fetch("/user.do?" + new URLSearchParams({
-                id: id
-            }),
-                {
-                    method: "DELETE"
-                })
+async function remove(id) {
+    const response = await fetch("/user.do?" + new URLSearchParams({
+        id: id
+    }),
+        {
+            method: "DELETE"
+        })
 
-            window.location.replace("/user.do");
-        }
+    window.location.replace("/user.do");
+}
 
